@@ -7,7 +7,7 @@ function hex() {
 }
 
 echo "Preparing container .."
-COMMAND="/usr/bin/shellinaboxd --quiet --no-beep --disable-peer-check -u shellinabox -g shellinabox -c /var/lib/shellinabox -p ${SIAB_PORT} --user-css ${SIAB_USERCSS}"
+COMMAND="/usr/bin/shellinaboxd --no-beep --disable-peer-check -u shellinabox -g shellinabox -c /var/lib/shellinabox -p ${SIAB_PORT} --user-css ${SIAB_USERCSS}"
 
 if [ "$SIAB_PKGS" != "none" ]; then
     set +e
@@ -55,11 +55,11 @@ if [ "${SIAB_SCRIPT}" != "none" ]; then
 fi
 
 echo "Starting container .."
-if [ "$@" = "shellinabox" ]; then
+if [ "${@}" = "shellinabox" ]; then
     echo "Executing: ${COMMAND}"
-    exec "${COMMAND}"
+    exec ${COMMAND}
 else
     echo "Not executing: ${COMMAND}"
     echo "Executing: ${*}"
-    exec "${@}"
+    exec ${@}
 fi

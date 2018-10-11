@@ -16,8 +16,8 @@ ENV SIAB_USERCSS="Normal:+/etc/shellinabox/options-enabled/00+Black-on-White.css
     SIAB_PKGS=none \
     SIAB_SCRIPT=none
 
-RUN apt update && apt -y dist-upgrade && apt install -y openssl curl openssh-client sudo shellinabox && \
-    apt clean && \
+RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y openssl curl openssh-client sudo shellinabox && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     ln -sf '/etc/shellinabox/options-enabled/00+Black on White.css' \
       /etc/shellinabox/options-enabled/00+Black-on-White.css && \
