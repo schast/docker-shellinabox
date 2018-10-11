@@ -6,12 +6,18 @@
      - [Pull The Image](#pull-the-image)
      - [Run The Image](#run-the-image)
  - [Configuration](#configuration)
-     - [Available Configuration Parameters](#available-configuration-parameters) 
+     - [Available Configuration Parameters](#available-configuration-parameters)
  - [References](#references)
 
 # Introduction
 
 Dockerfile to build a shellinabox container image.
+
+Forked from https://hub.docker.com/r/sspreitzer/shellinabox/ (https://github.com/sspreitzer/docker-shellinabox)
+
+# Differences
+* use ```--quiet``` instead of ```--debug```
+* updated Ubuntu Image with latest security fixes daily
 
 # Version
 
@@ -24,7 +30,7 @@ Current Version: **2.20**
 Pull the latest image, which is *HEAD* of the git repository.
 
 ```bash
-docker pull sspreitzer/shellinabox:latest
+docker pull schast/shellinabox:latest
 ```
 
 ## Run The Image
@@ -32,7 +38,7 @@ docker pull sspreitzer/shellinabox:latest
 For example.
 
 ```bash
-docker run -p 4200:4200 -e SIAB_PASSWORD=xyz678abc -e SIAB_SUDO=true sspreitzer/shellinabox:latest
+docker run -p 4200:4200 -e SIAB_PASSWORD=xyz678abc -e SIAB_SUDO=true schast/shellinabox:latest
 ```
 
 # Configuration
