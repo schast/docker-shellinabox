@@ -28,7 +28,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get install -y openssl curl
 
 EXPOSE 4200
 
-VOLUME /etc/shellinabox /var/log/supervisor /home
+# VOLUME /etc/shellinabox /var/log/supervisor /home
 
 COPY assets/entrypoint.sh /usr/local/sbin/
 
